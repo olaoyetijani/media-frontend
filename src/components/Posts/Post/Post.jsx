@@ -7,14 +7,14 @@ import {
   CardMedia,
   Button,
   Typography,
-} from "@material-ui/core";
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
-import DeleteIcon from "@material-ui/icons/Delete";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+} from "@mui/material";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import DeleteIcon from "@mui/icons-material/Delete";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { deletePost, likePost } from "../../../actions/posts";
-import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined";
+import ThumbUpAltOutlined from "@mui/icons-material/ThumbUpAltOutlined";
 
 const Post = ({ post, setCurrentId }) => {
   const classes = makeStyles();
@@ -81,7 +81,6 @@ const Post = ({ post, setCurrentId }) => {
       <Typography className={classes.title} variant="h6" gutterBottom>
         {post.title}
       </Typography>
-
 
       <CardContent>
         <Typography variant="body2" component="p" color="textSecondary">

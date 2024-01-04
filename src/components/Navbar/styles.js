@@ -1,5 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { deepPurple } from "@material-ui/core/colors";
+import { makeStyles } from "@mui/styles";
+import { deepPurple } from "@mui/material/colors";
 
 export default makeStyles((theme) => ({
   root: {
@@ -11,8 +11,6 @@ export default makeStyles((theme) => ({
   appBar: {
     borderRadius: 15,
     margin: "30px 0",
-    display: "flex",
-    flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     padding: "10px 25px",
@@ -23,8 +21,8 @@ export default makeStyles((theme) => ({
   },
   image: {
     marginLeft: "15px",
-    width: "20%",
-    height: "20%"
+    width: "25%",
+    height: "25%",
   },
   toolbar: {
     display: "flex",

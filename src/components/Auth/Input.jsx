@@ -1,9 +1,21 @@
 /* eslint-disable react/prop-types */
-import { TextField, Grid, InputAdornment, IconButton } from "@material-ui/core";
-import Visibility from '@material-ui/icons/visibility'
-import VisibilityOff from '@material-ui/icons/VisibilityOff' 
+//import { TextField, Grid, InputAdornment, IconButton } from "@mui/core";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+import Visibility from "@mui/icons-material/visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-const Input = ({ name, half, handleChange, label, type, autoFocus,handleShowPassword }) => {
+const Input = ({
+  name,
+  half,
+  handleChange,
+  label,
+  type,
+  autoFocus,
+  handleShowPassword,
+}) => {
   return (
     <Grid item xs={12} sm={half ? 6 : 12}>
       <TextField
@@ -24,7 +36,8 @@ const Input = ({ name, half, handleChange, label, type, autoFocus,handleShowPass
                     </IconButton>
                   </InputAdornment>
                 ),
-              } : null
+              }
+            : null
         }
       />
     </Grid>

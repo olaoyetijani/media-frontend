@@ -1,9 +1,9 @@
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
-import Button from "@material-ui/core/Button";
-import { Avatar } from "@material-ui/core";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import MenuIcon from "@mui/icons-material/Menu";
+import Button from "@mui/material/Button";
+import { Avatar } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { List, ListItem, Collapse } from "@mui/material";
@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 
-const TestNavbar = () => {
+const Navbar = () => {
   const classes = makeStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -67,7 +67,7 @@ const TestNavbar = () => {
                 component={Link}
                 to="/"
                 className={classes.heading}
-                variant="h4"
+                variant="h6"
                 align="center"
               >
                 media
@@ -135,7 +135,12 @@ const TestNavbar = () => {
       )}
 
       {full && (
-        <AppBar className={classes.appBar} position="static" color="inherit">
+        <AppBar
+          sx={{ flexDirection: "row" }}
+          className={classes.appBar}
+          position="static"
+          color="inherit"
+        >
           <div className={classes.brandContainer}>
             <Typography
               component={Link}
@@ -199,4 +204,4 @@ const TestNavbar = () => {
   );
 };
 
-export default TestNavbar;
+export default Navbar;
