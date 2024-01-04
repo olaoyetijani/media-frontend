@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
-import Visibility from "@mui/icons-material/visibility";
+import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const Input = ({
