@@ -7,8 +7,6 @@ import { Avatar } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { List, ListItem, Collapse } from "@mui/material";
-
-import makeStyles from "./styles";
 import recollections from "../../assets/recollections.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -16,7 +14,6 @@ import { useDispatch } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 
 const Navbar = () => {
-  const classes = makeStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -55,9 +52,29 @@ const Navbar = () => {
   //className={classes.appBar}
 
   return (
-    <div className={classes.appBar} position="static" color="inherit">
+    <div
+      sx={{
+        borderRadius: 15,
+        margin: "30px 0",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "10px 25px",
+      }}
+      position="static"
+      color="inherit"
+    >
       {small && (
-        <AppBar className={classes.appBar} position="static" color="inherit">
+        <AppBar
+          sx={{
+            borderRadius: 15,
+            margin: "30px 0",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "10px 25px",
+          }}
+          position="static"
+          color="inherit"
+        >
           <List>
             <ListItem>
               <Button onClick={handleClick}>
@@ -66,14 +83,14 @@ const Navbar = () => {
               <Typography
                 component={Link}
                 to="/"
-                className={classes.heading}
+                sx={{ color: "rgba(0, 183, 255, 1)", textDecoration: "none" }}
                 variant="h6"
                 align="center"
               >
                 media
               </Typography>
               <img
-                className={classes.image}
+                sx={{ marginLeft: "15px", width: "25%", height: "25%" }}
                 src={recollections}
                 alt="recollections"
                 height="60"
@@ -87,7 +104,10 @@ const Navbar = () => {
                     <List component="div" disablePadding>
                       <ListItem>
                         <Avatar
-                          className={classes.purple}
+                          sx={{
+                            color: "primary.main",
+                            background: "primary.main",
+                          }}
                           alt={user.result.name}
                           src={user.result.picture}
                         >
@@ -96,7 +116,7 @@ const Navbar = () => {
                       </ListItem>
                       <ListItem>
                         <Typography
-                          className={classes.userName}
+                          sx={{ display: "flex", alignItems: "center" }}
                           variant="h6"
                           sm="hidden"
                         >
@@ -106,7 +126,6 @@ const Navbar = () => {
                       <ListItem>
                         <Button
                           variant="contained"
-                          className={classes.logout}
                           color="secondary"
                           onClick={logout}
                         >
@@ -136,52 +155,61 @@ const Navbar = () => {
 
       {full && (
         <AppBar
-          sx={{ flexDirection: "row" }}
-          className={classes.appBar}
+          sx={{
+            flexDirection: "row",
+            borderRadius: 15,
+            margin: "30px 0",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "10px 25px",
+          }}
           position="static"
           color="inherit"
         >
-          <div className={classes.brandContainer}>
+          <div sx={{ display: "flex", alignItems: "center" }}>
             <Typography
               component={Link}
               to="/"
-              className={classes.heading}
+              sx={{ color: "rgba(0, 183, 255, 1)", textDecoration: "none" }}
               variant="h2"
               align="center"
             >
               media
             </Typography>
             <img
-              className={classes.image}
+              sx={{ marginLeft: "15px", width: "25%", height: "25%" }}
               src={recollections}
               alt="recollections"
               height="60"
               sm="hidden"
             />
           </div>
-          <Toolbar className={classes.toolbar}>
+          <Toolbar
+            sx={{ display: "flex", justifyContent: "flex-end", width: "400px" }}
+          >
             {user ? (
-              <div className={classes.profile}>
+              <div
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  width: "400px",
+                }}
+              >
                 <Avatar
-                  className={classes.purple}
+                  sx={{ color: "primary.main", background: "primary.main" }}
                   alt={user.result.name}
                   src={user.result.picture}
                 >
                   {user.result.name.charAt(0)}
                 </Avatar>
                 <Typography
-                  className={classes.userName}
+                  sx={{ display: "flex", alignItems: "center" }}
                   variant="h6"
                   sm="hidden"
                 >
                   {user.result.name}
                 </Typography>
-                <Button
-                  variant="contained"
-                  className={classes.logout}
-                  color="secondary"
-                  onClick={logout}
-                >
+                <Button variant="contained" color="secondary" onClick={logout}>
                   logout
                 </Button>
               </div>

@@ -1,12 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import makeStyles from "./styles";
 import { TextField, Button, Typography, Paper } from "@mui/material";
-//import TextField from '@mui/core/TextField'
 import { useDispatch, useSelector } from "react-redux";
 import { createPost, updatePost } from "../../actions/posts";
 import { useNavigate } from "react-router-dom";
-//import { createNewPost } from "../../reducers/postsReducer";
 import FileBase from "react-file-base64";
 
 // Get the current ID
@@ -19,7 +16,6 @@ const Form = ({ currentId, setCurrentId }) => {
     selectedFile: "",
   });
 
-  const classes = makeStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -61,7 +57,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   if (!user?.result.name) {
     return (
-      <Paper className={classes.paper}>
+      <Paper sx={{ padding: 2 }}>
         <Typography variant="h6" align="center">
           Please sign in to create your own memories and like other's memories
         </Typography>
@@ -70,11 +66,16 @@ const Form = ({ currentId, setCurrentId }) => {
   }
 
   return (
-    <Paper className={classes.paper}>
+    <Paper sx={{ padding: 2 }}>
       <form
+        xs={{
+          margin: 1,
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
         autoComplete="off"
         noValidate
-        className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
         encType="multipart/form-data"
       >
@@ -110,7 +111,7 @@ const Form = ({ currentId, setCurrentId }) => {
           }
         />
 
-        <div className={classes.fileInput}>
+        <div sx={{ width: "97%", margin: "10px 0" }}>
           <FileBase
             type="file"
             multiple={false}
@@ -121,7 +122,7 @@ const Form = ({ currentId, setCurrentId }) => {
         </div>
 
         <Button
-          className={classes.buttonSubmit}
+          sx={{ marginBottom: 10 }}
           variant="contained"
           color="primary"
           size="large"

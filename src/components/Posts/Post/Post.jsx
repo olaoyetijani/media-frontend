@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import makeStyles from "./styles";
 import {
   Card,
   CardActions,
@@ -17,7 +16,6 @@ import { deletePost, likePost } from "../../../actions/posts";
 import ThumbUpAltOutlined from "@mui/icons-material/ThumbUpAltOutlined";
 
 const Post = ({ post, setCurrentId }) => {
-  const classes = makeStyles();
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
 
@@ -50,22 +48,40 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   return (
-    <Card className={classes.card}>
+    <Card
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        borderRadius: "15px",
+        height: "100%",
+        position: "relative",
+      }}
+    >
       <CardMedia
-        className={classes.media}
+        sx={{
+          height: 0,
+          paddingTop: "56.25%",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backgroundBlendMode: "darken",
+        }}
         image={post.selectedFile}
         title={post.title}
         component="div"
       />
 
-      <div className={classes.overlay}>
+      <div
+        sx={{ position: "absolute", top: "20px", left: "20px", color: "white" }}
+      >
         <Typography variant="h6">{post.name}</Typography>
         <Typography variant="body2">
           {moment(post.createdAt).fromNow()}
         </Typography>
       </div>
 
-      <div className={classes.overlay2}>
+      <div
+        sx={{ position: "absolute", top: "20px", left: "20px", color: "white" }}
+      >
         {(user?.result?.googleId === post?.creator ||
           user?.result?._id === post?.creator) && (
           <Button
@@ -78,7 +94,7 @@ const Post = ({ post, setCurrentId }) => {
         )}
       </div>
 
-      <Typography className={classes.title} variant="h6" gutterBottom>
+      <Typography sx={{ padding: "0 16px" }} variant="h6" gutterBottom>
         {post.title}
       </Typography>
 
@@ -88,13 +104,25 @@ const Post = ({ post, setCurrentId }) => {
         </Typography>
       </CardContent>
 
-      <div className={classes.details}>
+      <div
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          margin: "20px",
+        }}
+      >
         <Typography variant="body2" color="textSecondary">
           {post.tags.map((tag) => `#${tag} `)}
         </Typography>
       </div>
 
-      <CardActions className={classes.cardActions}>
+      <CardActions
+        sx={{
+          padding: "0, 16px, 8px, 16px",
+          display: "flex",
+          justifyContent: "space-betweens",
+        }}
+      >
         <Button
           size="small"
           color="primary"

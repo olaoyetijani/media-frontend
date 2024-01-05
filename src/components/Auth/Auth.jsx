@@ -7,7 +7,6 @@ import {
   Container,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import makeStyles from "./styles";
 import Input from "./Input";
 import { useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
@@ -35,8 +34,6 @@ const Auth = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-
-  const classes = makeStyles();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,14 +74,23 @@ const Auth = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
-        <Paper className={classes.paper} elevation={3}>
-          <Avatar className={classes.avatar}>
+        <Paper
+          sx={{
+            marginTop: 3,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: 2,
+          }}
+          elevation={3}
+        >
+          <Avatar sx={{ margin: 1, background: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography variant="h5">
             {isSignup ? "Sign Up" : "Sign in"}
           </Typography>
-          <form className={classes.form} onSubmit={handleSubmit}>
+          <form sx={{ width: "100%", marginTop: 3 }} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
               {isSignup && (
                 <>
@@ -130,8 +136,7 @@ const Auth = () => {
               fullWidth
               variant="contained"
               color="primary"
-              sx={{ marginTop: 3, marginBottom: 3 }}
-              className={classes.submit}
+              sx={{ margin: "3, 0, 2" }}
             >
               {isSignup ? "Sign up" : "Sign In"}
             </Button>
@@ -142,6 +147,7 @@ const Auth = () => {
               onError={() => {
                 console.log("Error");
               }}
+              sx={{ marginBottom: 2 }}
             />
             <Grid container justifyContent="flex-end">
               <Grid item>
