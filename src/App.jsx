@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Auth from "./components/Auth/Auth";
-import env from "react-dotenv";
 import { ThemeProvider } from "@mui/styles";
 import { createTheme } from "@mui/material";
 
