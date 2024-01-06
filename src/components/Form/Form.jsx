@@ -69,10 +69,10 @@ const Form = ({ currentId, setCurrentId }) => {
   }
 
   return (
-    <Paper sx={{ p: 2 }}>
+    <Paper sx={{ p: 2, borderRadius: 3 }}>
       <form
         style={{
-          margin: 1,
+          margin: 2,
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
@@ -86,6 +86,7 @@ const Form = ({ currentId, setCurrentId }) => {
           {currentId ? "Edit" : "Create"} a new post
         </Typography>
         <TextField
+          sx={{ m: 2 }}
           name="title"
           variant="outlined"
           label="Title"
@@ -94,6 +95,7 @@ const Form = ({ currentId, setCurrentId }) => {
           onChange={(e) => setPostData({ ...postData, title: e.target.value })}
         />
         <TextField
+          sx={{ m: 2 }}
           name="message"
           variant="outlined"
           label="Message"
@@ -104,6 +106,7 @@ const Form = ({ currentId, setCurrentId }) => {
           }
         />
         <TextField
+          sx={{ m: 2 }}
           name="tags"
           variant="outlined"
           label="Tags"
@@ -125,7 +128,7 @@ const Form = ({ currentId, setCurrentId }) => {
         </div>
 
         <Button
-          sx={{ mb: 10 }}
+          sx={{ mb: 2 }}
           variant="contained"
           color="primary"
           size="large"

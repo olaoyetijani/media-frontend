@@ -22,7 +22,7 @@ const Home = () => {
           container
           justifyContent="space-between"
           alignItems={"stretch"}
-          spacing={3}
+          style={{ display: 'flex', flexDirection: 'row'}}
           sx={{
             flexDirection: {
               sm: "column-reverse",
