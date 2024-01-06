@@ -3,10 +3,12 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
-import { Avatar } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { List, ListItem, Collapse } from "@mui/material";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Collapse from "@mui/material/Collapse";
 import recollections from "../../assets/recollections.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -49,28 +51,27 @@ const Navbar = () => {
 
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
-  //className={classes.appBar}
 
   return (
     <div
-      sx={{
+      style={{
         borderRadius: 15,
         margin: "30px 0",
         justifyContent: "space-between",
         alignItems: "center",
         padding: "10px 25px",
+        position: "static",
+        color: "inherit",
       }}
-      position="static"
-      color="inherit"
     >
       {small && (
         <AppBar
           sx={{
-            borderRadius: 15,
-            margin: "30px 0",
+            borderRadius: 8,
+            m: "20px 0",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: "10px 25px",
+            p: "5px 10px",
           }}
           position="static"
           color="inherit"
@@ -90,7 +91,7 @@ const Navbar = () => {
                 media
               </Typography>
               <img
-                sx={{ marginLeft: "15px", width: "25%", height: "25%" }}
+                style={{ marginLeft: "15px", width: "25%", height: "25%" }}
                 src={recollections}
                 alt="recollections"
                 height="60"
@@ -98,10 +99,10 @@ const Navbar = () => {
               />
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
+              <List component="div" disablep>
                 <ListItem>
                   {user && (
-                    <List component="div" disablePadding>
+                    <List component="div" disablep>
                       <ListItem>
                         <Avatar
                           sx={{
@@ -158,15 +159,15 @@ const Navbar = () => {
           sx={{
             flexDirection: "row",
             borderRadius: 15,
-            margin: "30px 0",
+            m: "30px 0",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: "10px 25px",
+            p: "10px 25px",
           }}
           position="static"
-          color="inherit"
+          color='inherit'
         >
-          <div sx={{ display: "flex", alignItems: "center" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <Typography
               component={Link}
               to="/"
@@ -177,10 +178,10 @@ const Navbar = () => {
               media
             </Typography>
             <img
-              sx={{ marginLeft: "15px", width: "25%", height: "25%" }}
+              style={{ marginLeft: "15px", width: "25%", height: "25%" }}
               src={recollections}
               alt="recollections"
-              height="60"
+              height="50"
               sm="hidden"
             />
           </div>
@@ -189,7 +190,7 @@ const Navbar = () => {
           >
             {user ? (
               <div
-                sx={{
+                style={{
                   display: "flex",
                   justifyContent: "space-between",
                   width: "400px",

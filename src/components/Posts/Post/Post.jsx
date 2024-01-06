@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
-import {
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-} from "@mui/material";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import CardMedia from "@mui/material/CardMedia";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DeleteIcon from "@mui/icons-material/Delete";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -61,7 +59,7 @@ const Post = ({ post, setCurrentId }) => {
       <CardMedia
         sx={{
           height: 0,
-          paddingTop: "56.25%",
+          pt: "56.25%",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
           backgroundBlendMode: "darken",
         }}
@@ -71,7 +69,12 @@ const Post = ({ post, setCurrentId }) => {
       />
 
       <div
-        sx={{ position: "absolute", top: "20px", left: "20px", color: "white" }}
+        style={{
+          position: "absolute",
+          top: "20px",
+          left: "20px",
+          color: "white",
+        }}
       >
         <Typography variant="h6">{post.name}</Typography>
         <Typography variant="body2">
@@ -80,7 +83,12 @@ const Post = ({ post, setCurrentId }) => {
       </div>
 
       <div
-        sx={{ position: "absolute", top: "20px", left: "20px", color: "white" }}
+        style={{
+          position: "absolute",
+          top: "20px",
+          left: "20px",
+          color: "white",
+        }}
       >
         {(user?.result?.googleId === post?.creator ||
           user?.result?._id === post?.creator) && (
@@ -94,7 +102,7 @@ const Post = ({ post, setCurrentId }) => {
         )}
       </div>
 
-      <Typography sx={{ padding: "0 16px" }} variant="h6" gutterBottom>
+      <Typography sx={{ p: "0 16px" }} variant="h6" gutterBottom>
         {post.title}
       </Typography>
 
@@ -105,7 +113,7 @@ const Post = ({ post, setCurrentId }) => {
       </CardContent>
 
       <div
-        sx={{
+        style={{
           display: "flex",
           justifyContent: "space-between",
           margin: "20px",
@@ -118,9 +126,9 @@ const Post = ({ post, setCurrentId }) => {
 
       <CardActions
         sx={{
-          padding: "0, 16px, 8px, 16px",
+          p: "0, 16px, 8px, 16px",
           display: "flex",
-          justifyContent: "space-betweens",
+          justifyContent: "space-between",
         }}
       >
         <Button

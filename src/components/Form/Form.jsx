@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { TextField, Button, Typography, Paper } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost, updatePost } from "../../actions/posts";
 import { useNavigate } from "react-router-dom";
@@ -57,7 +60,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   if (!user?.result.name) {
     return (
-      <Paper sx={{ padding: 2 }}>
+      <Paper sx={{ p: 2 }}>
         <Typography variant="h6" align="center">
           Please sign in to create your own memories and like other's memories
         </Typography>
@@ -66,9 +69,9 @@ const Form = ({ currentId, setCurrentId }) => {
   }
 
   return (
-    <Paper sx={{ padding: 2 }}>
+    <Paper sx={{ p: 2 }}>
       <form
-        xs={{
+        style={{
           margin: 1,
           display: "flex",
           flexWrap: "wrap",
@@ -111,7 +114,7 @@ const Form = ({ currentId, setCurrentId }) => {
           }
         />
 
-        <div sx={{ width: "97%", margin: "10px 0" }}>
+        <div style={{ width: "97%", margin: "10px 0" }}>
           <FileBase
             type="file"
             multiple={false}
@@ -122,7 +125,7 @@ const Form = ({ currentId, setCurrentId }) => {
         </div>
 
         <Button
-          sx={{ marginBottom: 10 }}
+          sx={{ mb: 10 }}
           variant="contained"
           color="primary"
           size="large"

@@ -1,11 +1,9 @@
-import {
-  Avatar,
-  Button,
-  Paper,
-  Grid,
-  Typography,
-  Container,
-} from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Input from "./Input";
 import { useState } from "react";
@@ -76,21 +74,21 @@ const Auth = () => {
       <Container component="main" maxWidth="xs">
         <Paper
           sx={{
-            marginTop: 3,
+            mt: 3,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: 2,
+            p: 2,
           }}
           elevation={3}
         >
-          <Avatar sx={{ margin: 1, background: "secondary.main" }}>
+          <Avatar sx={{ m: 1, background: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography variant="h5">
             {isSignup ? "Sign Up" : "Sign in"}
           </Typography>
-          <form sx={{ width: "100%", marginTop: 3 }} onSubmit={handleSubmit}>
+          <form style={{ width: "100%", marginTop: 3 }} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
               {isSignup && (
                 <>
@@ -136,7 +134,7 @@ const Auth = () => {
               fullWidth
               variant="contained"
               color="primary"
-              sx={{ margin: "3, 0, 2" }}
+              sx={{ my: 3 }}
             >
               {isSignup ? "Sign up" : "Sign In"}
             </Button>
@@ -147,9 +145,9 @@ const Auth = () => {
               onError={() => {
                 console.log("Error");
               }}
-              sx={{ marginBottom: 2 }}
+              style={{ my: 2 }}
             />
-            <Grid container justifyContent="flex-end">
+            <Grid container justifyContent="flex-start">
               <Grid item>
                 <Button onClick={switchMode}>
                   {isSignup
