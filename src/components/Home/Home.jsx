@@ -27,10 +27,9 @@ const Home = () => {
             flexDirection: {
               sm: "column-reverse",
             },
-            my: 5
           }}
         >
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4} sx={{ mb: 5}}>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
           </Grid>
 

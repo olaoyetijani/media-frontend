@@ -60,7 +60,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   if (!user?.result.name) {
     return (
-      <Paper sx={{ p: 2 }}>
+      <Paper sx={{ p: 2, my: 3 }}>
         <Typography variant="h6" align="center">
           Please sign in to create your own memories and like other's memories
         </Typography>
