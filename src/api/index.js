@@ -4,6 +4,8 @@ const API = axios.create({
   baseURL: "https://media-backend-xxg4.onrender.com",
 });
 
+//https://media-backend-xxg4.onrender.com
+
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
     req.headers.Authorization = `Bearer ${
