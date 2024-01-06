@@ -2,7 +2,6 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
-  "proxy": "https://media-backend-xxg4.onrender.com/",
   "eslintConfig": {
     "env": {
       "browser": true,
