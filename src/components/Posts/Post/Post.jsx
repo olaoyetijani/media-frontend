@@ -86,7 +86,7 @@ const Post = ({ post, setCurrentId }) => {
         style={{
           position: "absolute",
           top: "20px",
-          left: "20px",
+          right: 0,
           color: "white",
         }}
       >
